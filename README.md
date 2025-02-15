@@ -1,7 +1,8 @@
-# Netflix Content Analytics: SQL Data Exploration
-<h1 align="center" style="line-height: 0;">
-  <img src="https://github.com/Injamam001/sql_project_netflix/blob/main/logo.png" width="400" />
+<h1 align="center">
+  Netflix Content Analytics: SQL Data Exploration
 </h1>
-
+<p align="center">
+  <img src="https://github.com/Injamam001/sql_project_netflix/blob/main/logo.png" width="300" />
+</p>
 
 
