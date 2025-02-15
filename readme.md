@@ -47,3 +47,129 @@ CREATE TABLE movies (
 SELECT type, COUNT(type) AS number
 FROM movies
 GROUP BY type;
+```
+#### 2. Find the most common rating for movies and TV shows
+```sql
+WITH rating_table AS (
+SELECT 
+	type, 
+	rating, 
+    COUNT(rating) AS rating_count,
+    RANK() OVER(PARTITION BY type ORDER BY COUNT(rating) DESC) AS ranking
+FROM movies
+WHERE rating IS NOT NULL
+GROUP BY type, rating)
+
+SELECT type, rating, rating_count
+FROM rating_table
+WHERE ranking = 1
+```
+#### 3. List all movies released in a specific year (e.g., 2020)
+```sql
+SELECT *
+FROM movies
+WHERE 
+	type = 'Movie'
+    AND release_year = 2020
+;
+```
+#### 4. Find the top 5 countries with the most content on Netflix
+```sql
+WITH cte AS (
+SELECT 
+	    distinct(TRIM(SUBSTRING_INDEX(SUBSTRING_INDEX(country, ',', n),',',-1))) AS country,
+        show_id
+FROM movies
+JOIN (
+        SELECT 1 AS n UNION ALL
+        SELECT 2 UNION ALL
+        SELECT 3 UNION ALL
+        SELECT 4 UNION ALL
+        SELECT 5 UNION ALL
+        SELECT 6 UNION ALL
+        SELECT 7 UNION ALL
+        SELECT 8 UNION ALL
+        SELECT 9 UNION ALL
+        SELECT 10 UNION ALL
+        SELECT 11 UNION ALL
+        SELECT 12 UNION ALL
+        SELECT 13 UNION ALL
+        SELECT 14 UNION ALL
+        SELECT 15 UNION ALL
+        SELECT 16 UNION ALL
+        SELECT 17 UNION ALL
+        SELECT 18) AS numbers
+        
+    ON CHAR_LENGTH(cast) - CHAR_LENGTH(REPLACE(cast, ',', '')) >= n - 1
+   )
+SELECT 
+	country,
+    COUNT(show_id) AS content
+FROM cte
+GROUP BY country
+ORDER BY content DESC
+LIMIT 5;
+```
+
+#### 5. Identify the longest movie
+```sql
+SELECT title, duration
+FROM movies
+WHERE type = 'Movie'
+ORDER BY CAST(SUBSTRING_INDEX(duration, ' ', 1)AS UNSIGNED) DESC
+LIMIT 1;
+```
+
+#### 6. Find content added in the last 5 years
+```sql
+SELECT *
+FROM movies
+WHERE date_added >= DATE_SUB(CURDATE(), INTERVAL 5 YEAR)
+ORDER BY date_added ASC;
+```
+
+#### 7. 
+```sql
+
+```
+
+#### 8. 
+```sql
+
+```
+
+#### 9. 
+```sql
+
+```
+
+#### 10. 
+```sql
+
+```
+
+#### 11. 
+```sql
+
+```
+
+#### 12. 
+```sql
+
+```
+
+#### 13. 
+```sql
+
+```
+
+#### 14. 
+```sql
+
+```
+
+#### 15. 
+```sql
+
+```
+
