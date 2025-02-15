@@ -9,3 +9,9 @@
 
 ## Overview
 This project leverages SQL to analyze Netflix's movie and TV show data to solve business challenges. By exploring data points such as genres, ratings, and release years, the analysis uncovers valuable insights that can inform content strategy, optimize decision-making, and help address key business objectives.
+
+## Objectives
+- Analyze the distribution of content types (movies vs TV shows).
+- Identify the most common ratings for movies and TV shows.
+- List and analyze content based on release years, countries, and durations.
+- Explore and categorize content based on specific criteria and keywords.
