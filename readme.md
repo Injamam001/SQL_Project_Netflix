@@ -23,6 +23,7 @@ You can access and download the dataset used for this project [HERE](https://www
 - Handled missing values
 # Schema
 To create the schema and tables in your SQL IDE, click this [LINK](https://github.com/Injamam001/sql_project_netflix/blob/main/sql_code_for_importing_netflix_data.sql) and download sql code file. This code was written in MySQL Workbench
+To download CSV file click [HERE](https://github.com/Injamam001/sql_project_netflix/blob/main/netflix_titles.csv)
 
 #### Table columns
 ```sql
