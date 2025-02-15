@@ -24,7 +24,7 @@ You can access and download the dataset used for this project [HERE](https://www
 # Schema
 To create the schema and tables in your SQL IDE, click this [LINK](https://github.com/Injamam001/sql_project_netflix/blob/main/sql_code_for_importing_netflix_data.sql) and download sql code file. This code was written in MySQL Workbench
 
-### Columns of the table are 
+#### Table columns
 ```sql
 CREATE TABLE movies (
     show_id	VARCHAR(512),
@@ -40,8 +40,9 @@ CREATE TABLE movies (
     listed_in	VARCHAR(512),
     description	VARCHAR(2500)
 );
-
-### 1. Count the number of Movies vs TV Shows
+```
+# Business problems and solutions
+#### 1. Count the number of Movies vs TV Shows
 ```sql
 SELECT type, COUNT(type) AS number
 FROM movies
