@@ -8,4 +8,4 @@
 </h1>
 
 ## Overview
-This project involves analyzing Netflix's movie and TV show data using SQL to uncover patterns and insights. By exploring attributes like genres, ratings, and release years, the analysis aims to identify trends and relationships within Netflix’s catalog. The goal is to gain a deeper understanding of the content offerings and how they are distributed across various categories.
+This project leverages SQL to analyze Netflix's movie and TV show data to solve business challenges. By exploring data points such as genres, ratings, and release years, the analysis uncovers valuable insights that can inform content strategy, optimize decision-making, and help address key business objectives.
