@@ -14,7 +14,7 @@ This project leverages SQL to analyze Netflix's movie and TV show data to solve 
 - Explore and categorize content based on specific criteria and keywords.
 
 # Dataset
-You can access the dataset used for this project [here](https://www.kaggle.com/datasets/shivamb/netflix-shows?resource=download)
+You can access and download the dataset used for this project [HERE](https://www.kaggle.com/datasets/shivamb/netflix-shows?resource=download)
 
 # Data quality improvement steps
 - Removed blank rows
@@ -22,4 +22,27 @@ You can access the dataset used for this project [here](https://www.kaggle.com/d
 - Standardized date formats
 - Handled missing values
 # Schema
-To create schema and table in your sql ide, click this [link](https://github.com/Injamam001/sql_project_netflix/blob/main/sql_code_for_importing_netflix_data.sql) and download sql code file. this code was written in mysql workbench.    
+To create the schema and tables in your SQL IDE, click this [LINK](https://github.com/Injamam001/sql_project_netflix/blob/main/sql_code_for_importing_netflix_data.sql) and download sql code file. This code was written in MySQL Workbench
+
+### Columns of the table are 
+```sql
+CREATE TABLE movies (
+    show_id	VARCHAR(512),
+    type	VARCHAR(512),
+    title	VARCHAR(512),
+    director	VARCHAR(512),
+    cast	VARCHAR(1000),
+    country	VARCHAR(512),
+    date_added	date,
+    release_year	INT,
+    rating	VARCHAR(512),
+    duration	VARCHAR(512),
+    listed_in	VARCHAR(512),
+    description	VARCHAR(2500)
+);
+
+### 1. Count the number of Movies vs TV Shows
+```sql
+SELECT type, COUNT(type) AS number
+FROM movies
+GROUP BY type;
