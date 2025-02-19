@@ -105,7 +105,7 @@ JOIN (
    )
 SELECT 
 	country,
-    COUNT(show_id) AS content
+	COUNT(show_id) AS content
 FROM cte
 GROUP BY country
 ORDER BY content DESC
@@ -142,7 +142,7 @@ SELECT *
 FROM movies
 WHERE 
 	type = 'TV Show'
-    AND CAST(SUBSTRING_INDEX(duration,' ',1)AS UNSIGNED)>5
+    	AND CAST(SUBSTRING_INDEX(duration,' ',1)AS UNSIGNED)>5
 ORDER BY CAST(SUBSTRING_INDEX(duration,' ',1)AS UNSIGNED) ASC
 ;
 ```
@@ -162,19 +162,19 @@ WITH cte_genre AS (
 		ON CHAR_LENGTH(listed_in) - CHAR_LENGTH(REPLACE(listed_in,',','')) >= n-1
 		)
 	SELECT 
-		genre, count(show_id) content
+	genre, count(show_id) content
 	FROM cte_genre
-    GROUP BY genre
-    ORDER BY content DESC;
+	GROUP BY genre
+   	ORDER BY content DESC;
 ```
 
 #### 10. Find each year and the average numbers of content release in India on netflix. Return top 5 year with highest avg content release
 ```sql
 SELECT 
 	release_year,
-    COUNT(show_id) AS total_content,
-    ROUND(COUNT(show_id)*100/ 
-    (SELECT COUNT(show_id)
+   	COUNT(show_id) AS total_content,
+	ROUND(COUNT(show_id)*100/ 
+	(SELECT COUNT(show_id)
 	FROM movies
 	WHERE country REGEXP 'india')) AS avg_content
 FROM movies
@@ -190,7 +190,7 @@ SELECT *
 FROM movies
 WHERE 
 	listed_in REGEXP 'documentaries'
-    and type = 'Movie';
+	AND type = 'Movie';
 ```
 
 #### 12. Find all content without a director
@@ -206,7 +206,7 @@ SELECT *
 FROM movies
 WHERE 
 	cast REGEXP 'salman khan'
-    AND release_year >= YEAR(CURDATE()) - 10
+	AND release_year >= YEAR(CURDATE()) - 10
 ORDER BY release_year DESC;
 ```
 
@@ -262,9 +262,9 @@ WITH cte_category AS (
     SELECT 
         title, 
         CASE
-			WHEN description LIKE '% kill%' THEN 'bad'
-            WHEN description LIKE '%violence%' THEN 'bad'
-            ELSE 'good'
+		WHEN description LIKE '% kill%' THEN 'bad'
+		WHEN description LIKE '%violence%' THEN 'bad'
+		ELSE 'good'
         END AS category
     FROM movies
 )
