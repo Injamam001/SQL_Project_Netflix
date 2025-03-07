@@ -93,15 +93,9 @@ JOIN (
         SELECT 9 UNION ALL
         SELECT 10 UNION ALL
         SELECT 11 UNION ALL
-        SELECT 12 UNION ALL
-        SELECT 13 UNION ALL
-        SELECT 14 UNION ALL
-        SELECT 15 UNION ALL
-        SELECT 16 UNION ALL
-        SELECT 17 UNION ALL
-        SELECT 18) AS numbers
+        SELECT 12) AS numbers
         
-    ON CHAR_LENGTH(cast) - CHAR_LENGTH(REPLACE(cast, ',', '')) >= n - 1
+    ON CHAR_LENGTH(country) - CHAR_LENGTH(REPLACE(country, ',', '')) >= n - 1
    )
 SELECT 
 	country,
