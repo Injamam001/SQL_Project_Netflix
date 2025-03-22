@@ -4,28 +4,28 @@
 
 <h1 align="center">Netflix Content Analytics: SQL Data Exploration</h1>
 
-# Overview
+### 🗺️ Overview
 This project leverages SQL to analyze Netflix's movie and TV show data to solve business challenges. By exploring data points such as genres, ratings, and release years, the analysis uncovers valuable insights that can inform content strategy, optimize decision-making, and help address key business objectives.
 
-# Objectives
+### 🎯 Objectives
 - Analyze the distribution of content types (movies vs TV shows).
 - Identify the most common ratings for movies and TV shows.
 - List and analyze content based on release years, countries, and durations.
 - Explore and categorize content based on specific criteria and keywords.
 
-# Dataset
+### 🧮 Dataset
 You can access and download the dataset used for this project [HERE](https://www.kaggle.com/datasets/shivamb/netflix-shows?resource=download)
 
-# Data quality improvement steps
+### ✅ Data quality improvement steps
 - Removed blank rows
 - Removed unwanted characters/spaces
 - Standardized date formats
 - Handled missing values
-# Schema
+### 📜 Schema
 To create the schema and tables in your SQL IDE, click this [LINK](https://github.com/Injamam001/sql_project_netflix/blob/main/sql_code_for_importing_netflix_data.sql) and download sql code file. This code was written in MySQL Workbench.
 To download CSV file click [HERE](https://github.com/Injamam001/sql_project_netflix/blob/main/netflix_titles.csv)
 
-#### Table columns
+#### ▦ Table columns
 ```sql
 CREATE TABLE movies (
     show_id	VARCHAR(512),
@@ -42,7 +42,7 @@ CREATE TABLE movies (
     description	VARCHAR(2500)
 );
 ```
-# Business problems and solutions
+### 🧩 Business problems and solutions
 #### 1. Count the number of Movies vs TV Shows
 ```sql
 SELECT type, COUNT(type) AS number
